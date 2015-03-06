@@ -4,10 +4,8 @@ require(dirname(__FILE__)."/base/Init.php");
 require(dirname(__FILE__)."/base/Application.php");   /*require,缺少不让运行；include,缺少不影响网站运行；加once,系统会主动判断只加载一次
 														__FILE__,取当前文件的绝对路径。D:\www\test.php
 														dirname(__FILE__),取当前文件的绝对目录。D:\www\	*/
-require(dirname(__FILE__)."/base/Controller.php");
-require(dirname(__FILE__)."/base/MongodbUtil.php");
 
-$ctr = "";
+$ctr = "comm";
 $act = "";
 
 if(isset($_GET['ctr']))
