@@ -1,3 +1,3 @@
 <?php
-require(dirname(__FILE__)."/base/Controller.php");
-require(dirname(__FILE__)."/base/MongodbUtil.php");
+require(dirname(__FILE__)."/Controller.php");
+require(dirname(__FILE__)."/MongodbUtil.php");

@@ -6,33 +6,37 @@ require(dirname(__FILE__)."/base/Application.php");   /*require,缺少不让运�
 														dirname(__FILE__),取当前文件的绝对目录。D:\www\	*/
 
 $ctr = "comm";
-$act = "";
+$act = "invalid";
 
-if(isset($_GET['ctr']))
-{
-	$ctr = $_GET['ctr'];
+//if($REQUEST_METHOD == 'GET')
+//{
+	if(isset($_GET['ctr']))
+	{
+		$ctr = $_GET['ctr'];
+	}
+	if(isset($_GET['act']))
+	{
+		$act = $_GET['act'];
+	}
+//}
+if (!isset($_COOKIE["loginname"])){
+	$ctr = "comm";
+	$act = "login";
 }
-if(isset($_GET['act']))
-{
-	$act = $_GET['act'];
-}
 
 
-$retmain = array();
-$retmain["status"] = "ok";
-$retmain["message"] = "ok";
 
 $actfile = dirname(__FILE__)."/controllers/".ucwords($ctr)."Controller.php";
 
-if(file_exists($actfile))
+if(!file_exists($actfile))
 {
-	require($actfile);
+	$ctr = "comm";
+	$act = "invalid";
+	$actfile = dirname(__FILE__)."/controllers/"."CommController.php";
 }
-else
-{
-	$retmain["status"] = "notfound";
-	$retmain["message"] = "error_invalid_url";
-}
+
+require($actfile);
+
 
 switch ($ctr)
 {
@@ -40,7 +44,7 @@ switch ($ctr)
 	case "user":
 
 		$controller = new UserController();
-		echo $act;
+		
 		switch ($act)
 		{
 			case "index":
@@ -48,6 +52,23 @@ switch ($ctr)
 				break;
 			case "mongo":
 				echo $controller->actionMongo();
+				break;
+		}
+		break;
+	case "comm":
+		$controller = new CommController();
+		echo $act;
+		//break;
+		switch ($act)
+		{
+			case "index":
+				echo $controller->actionIndex();
+				break;
+			case "login":
+				echo $controller->actionLogin();
+				break;
+			default:
+				echo $controller->actionInvalid();
 				break;
 		}
 		break;

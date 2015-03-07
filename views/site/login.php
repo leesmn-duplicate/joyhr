@@ -1,3 +1,7 @@
+<?php
+
+echo <<<END
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Navbar Template for Bootstrap</title>
+    <title>JOYHR Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/lisphp/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,13 +33,11 @@
 
   <body>
 
-      <div class="container" style="height:10px;">
-	    <p style="float:right!important;margin-top:-15px;"><?php echo $_COOKIE['loginname']?></p>
-	   </div>
+    <div class="container">
+
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
-    
-        <div class="container">
+        <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -45,32 +47,50 @@
             </button>
             <a class="navbar-brand" href="#">JOYHR</a>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-              <li><a href="../navbar-static-top/">Static top</a></li>
-              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-      
 
-      <div class="container">
+	
+	<div class="row">
+        <div class="col-md-8">
+          <h2>Welcom JOYHR</h2>
+          <p>This is beatiful website!</p>
+        </div>
+        <div class="col-md-3">
+          <form class="form-signin" action="index.php?ctr=comm&act=index" method="post">
+	        <h2 class="form-signin-heading">登录</h2>
+	        <label for="inputEmail" class="sr-only">Email address</label>
+	        <input type="email" name="name" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+		    <br/>
+	        <label for="inputPassword" class="sr-only">Password</label>
+	        <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
+	        <div class="checkbox">
+	          <label>
+	            <input type="checkbox" value="remember-me"> Remember me
+	          </label>
+	        </div>
+	        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+	      </form>
+       </div>
+       
+      </div>
+		
+		
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/lisphp/js/jquery-1.11.2.js"></script>
+    <script src="/lisphp/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/lisphp/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+END;
+
+?>
