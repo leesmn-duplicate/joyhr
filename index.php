@@ -50,8 +50,8 @@ switch ($ctr)
 			case "index":
 				echo $controller->actionIndex();
 				break;
-			case "mongo":
-				echo $controller->actionMongo();
+			case "creat":
+				echo $controller->actionCreat();
 				break;
 		}
 		break;

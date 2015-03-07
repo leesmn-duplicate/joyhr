@@ -8,17 +8,19 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Navbar Template for Bootstrap</title>
+    <title><?php echo $title?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/lisphp/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/joyhr/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/lisphp/css/navbar.css" rel="stylesheet">
+    <link href="/joyhr/css/navbar.css" rel="stylesheet">
+    
+     <link href="/joyhr/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/lisphp/js/ie-emulation-modes-warning.js"></script>
+    <script src="/joyhr/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,12 +50,11 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">员工 <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
+                  <li><a href="index.php?ctr=user&act=creat">新建员工</a></li>
                   <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
@@ -62,6 +63,8 @@
                   <li><a href="#">One more separated link</a></li>
                 </ul>
               </li>
+              
+              <li><a href="#">组织结构</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
