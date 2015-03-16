@@ -6,8 +6,10 @@ class UserController extends Controller{
 		require_once($dir . '/../models/UserModel.php');
 	}
 	public function actionIndex(){
-		
- 		return $this->render('index', array());
+		$mongo = new MongodbUtil("127.0.0.1:27017");
+		$mongo->selectDb("hrdb");
+		$result = $mongo->find("user_info", array('telphone'=>array('$exists'=>true)),array(),array('_id'=>false));
+ 		return $this->render('index', $result);
 		
 	}
 	

@@ -35,9 +35,9 @@ echo <<<END
 		  		  <label for="optionsRadios1">性别</label>  
 	                <div class="col-sm-offset-2">  
 	                    <label class="radio">  
-	                        <input type="radio" name="sex" id="optionsRadios1" value="1" checked>男</label>  
+	                        <input type="radio" name="sex" id="optionsRadios1" value="男" checked>男</label>  
 	                    <label class="radio">  
-	                        <input type="radio" name="sex" id="optionsRadios2" value="0">女</label>  
+	                        <input type="radio" name="sex" id="optionsRadios2" value="女">女</label>  
 	                </div>  
 			  </div>
 	       <div class="form-group">  
