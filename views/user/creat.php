@@ -5,15 +5,20 @@ require_once(dirname(dirname(__FILE__))."/site/head.php");
 echo <<<END
 
 
-      <h5>员工->新建员工</h5>
+      <h5>员工管理->新建员工</h5>
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-       <div class="row">
+      <div class="row row-offcanvas row-offcanvas-right">
+		<div class="col-md-12 jumbotron">
         <div class="col-md-4">
 	       <form class="form-horizontal" action="index.php?ctr=user&act=creat" method="post">
 		      <div class="form-group">
 			    <label for="inputName" >姓名</label> <!--class="sr-only"-->
                 <input type="text" name="name" class="form-control" id="inputName" placeholder="请输入姓名" required autofocus>
+			  </div>
+		
+		  	 <div class="form-group">
+			    <label for="inputPcode" >手机号码</label>
+		        <input type="text" name="telphone" id="inputPcode" class="form-control" placeholder="输入手机号码" required>
 			  </div>
 
 			  <div class="form-group">
@@ -86,8 +91,14 @@ echo <<<END
 		        <button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
 			</div>
 		   </form>
-	    </div>
-       </div>
+	      </div><!--col-md-4-->
+		</div><!--col-md-12 jumbotron-->
+		
+		
+		
+		
+		</div>
+		
       </div>
 
 

@@ -40,11 +40,20 @@ require($actfile);
 
 switch ($ctr)
 {
-	
+	case "org":
+		$controller = new OrgController();
+		switch ($act)
+		{
+			case "index":
+				echo $controller->actionIndex();
+				break;
+			case "creat":
+				echo $controller->actionCreat();
+				break;
+		}
+		break;
 	case "user":
-
 		$controller = new UserController();
-		
 		switch ($act)
 		{
 			case "index":

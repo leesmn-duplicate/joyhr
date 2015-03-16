@@ -4,7 +4,6 @@ class CommController extends Controller{
 		parent::__construct("site"); //继承其父类的构造函数
 	}
 	public function actionIndex(){
-
 		return $this->render('index', array());
 
 	}
@@ -14,7 +13,10 @@ class CommController extends Controller{
 			$pwd = $_POST['pwd'];
 			
 			setcookie("loginname", $name, time()+1200);
-			return $this->render('index', array());
+			//return $this->render('index', array());
+			header("Location: /joyhr/index.php?ctr=comm&act=index");
+			//确保重定向后，后续代码不会被执行
+			exit;
 		}else{
 			return $this->render('login', array());
 		}

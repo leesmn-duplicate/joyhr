@@ -12,5 +12,18 @@
     <script src="/joyhr/bootstrap/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/joyhr/js/ie10-viewport-bug-workaround.js"></script>
+    
+    
+    <script type="text/javascript">
+      $(function(){
+
+    	  $('.active').parents('.dropdown').addClass("active");
+    	  $("#navbar li").click(function(){
+    	      $(this).addClass("active").siblings().removeClass("active");
+    	  });
+
+    	    
+    	});
+    </script>
   </body>
 </html>
